@@ -1,0 +1,46 @@
+{
+  "title": "Social Sharing Icons",
+  "description": "Social sharing icon links for a website.",
+  "include": {
+    "afterBody": [
+      {
+        "tag": "script",
+        "src": "./social-sharing-icons.js"
+      },
+      {
+        "tag": "script",
+        "contents": "SocialSharingIcons.render(ELEMENT, OPTIONS)"
+      }
+    ]
+  },
+  "element": {
+    "allowSelector": "*"
+  },
+  "options": {
+    "required": true,
+    "properties": {
+      "color": {
+        "type": "string",
+        "default": "auto"
+      },
+      "icons": {
+        "type": "array",
+        "required": true,
+        "min": 1,
+        "items": {
+          "type": "object",
+          "properties": {
+            "account": {
+              "type": "string",
+              "required": true
+            },
+            "username": {
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

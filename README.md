@@ -14,10 +14,10 @@ Visit [Eager app store](http://eager.io)
 setTimeout ->
   SocialSharingIcons document.querySelector('.social-sharing-icons')
     icons: [{
-      type: 'twitter'
+      account: 'twitter'
       username: 'adamfschwartz'
     }, {
-      type: 'github'
+      account: 'github'
       username: 'adamschwartz'
     }]
     color: '#70c2b5'

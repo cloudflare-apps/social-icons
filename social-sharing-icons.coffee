@@ -53,8 +53,8 @@ SocialSharingIcons =
 
     for icon in icons
       htmlString += '''
-        <a href="http://#{ icon.type }.com/#{ icon.username }">
-          #{ SVG[icon.type](options.color) }
+        <a href="http://#{ icon.account }.com/#{ icon.username }">
+          #{ SVG[icon.account](options.color) }
         </a>
       '''
 
