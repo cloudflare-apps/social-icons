@@ -17,27 +17,65 @@
     "allowSelector": "*"
   },
   "options": {
-    "required": true,
     "properties": {
       "color": {
+        "title": "Color",
         "type": "string",
         "default": "auto"
       },
-      "icons": {
-        "type": "array",
-        "required": true,
-        "min": 1,
-        "items": {
-          "type": "object",
-          "properties": {
-            "account": {
-              "type": "string",
-              "required": true
-            },
-            "username": {
-              "type": "string",
-              "required": true
-            }
+      "facebook": {
+        "title": "Facebook",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "title": "Show",
+            "type": "boolean"
+          },
+          "username": {
+            "title": "Username",
+            "type": "string"
+          }
+        }
+      },
+      "twitter": {
+        "title": "Twitter",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "title": "Show",
+            "type": "boolean"
+          },
+          "username": {
+            "title": "Handle",
+            "type": "string"
+          }
+        }
+      },
+      "pinterest": {
+        "title": "Pinterest",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "title": "Show",
+            "type": "boolean"
+          },
+          "username": {
+            "title": "Username",
+            "type": "string"
+          }
+        }
+      },
+      "youtube": {
+        "title": "Youtube",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "title": "Show",
+            "type": "boolean"
+          },
+          "username": {
+            "title": "Username",
+            "type": "string"
           }
         }
       }
