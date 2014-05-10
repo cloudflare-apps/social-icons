@@ -23,59 +23,65 @@
         "type": "string",
         "default": "auto"
       },
-      "facebook": {
-        "title": "Facebook",
+      "icons": {
+        "title": "Icons",
         "type": "object",
         "properties": {
-          "enabled": {
-            "title": "Show",
-            "type": "boolean"
+          "facebook": {
+            "title": "Facebook",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean"
+              },
+              "username": {
+                "title": "Username",
+                "type": "string"
+              }
+            }
           },
-          "username": {
-            "title": "Username",
-            "type": "string"
-          }
-        }
-      },
-      "twitter": {
-        "title": "Twitter",
-        "type": "object",
-        "properties": {
-          "enabled": {
-            "title": "Show",
-            "type": "boolean"
+          "twitter": {
+            "title": "Twitter",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean"
+              },
+              "username": {
+                "title": "Handle",
+                "type": "string"
+              }
+            }
           },
-          "username": {
-            "title": "Handle",
-            "type": "string"
-          }
-        }
-      },
-      "pinterest": {
-        "title": "Pinterest",
-        "type": "object",
-        "properties": {
-          "enabled": {
-            "title": "Show",
-            "type": "boolean"
+          "pinterest": {
+            "title": "Pinterest",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean"
+              },
+              "username": {
+                "title": "Username",
+                "type": "string"
+              }
+            }
           },
-          "username": {
-            "title": "Username",
-            "type": "string"
-          }
-        }
-      },
-      "youtube": {
-        "title": "Youtube",
-        "type": "object",
-        "properties": {
-          "enabled": {
-            "title": "Show",
-            "type": "boolean"
-          },
-          "username": {
-            "title": "Username",
-            "type": "string"
+          "youtube": {
+            "title": "Youtube",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean"
+              },
+              "username": {
+                "title": "Username",
+                "type": "string"
+              }
+            }
           }
         }
       }
