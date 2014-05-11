@@ -10,15 +10,18 @@ Visit [Eager app store](http://eager.io)
 ```
 
 ### Example usage
-```coffeescript
-setTimeout ->
-  SocialSharingIcons document.querySelector('.social-sharing-icons')
-    icons: [{
-      account: 'twitter'
-      username: 'adamfschwartz'
-    }, {
-      account: 'github'
-      username: 'adamschwartz'
-    }]
-    color: '#70c2b5'
+
+```javascript
+SocialSharingIcons.init(document.querySelector('.social-sharing-icons'), {
+  icons: [{
+    account: 'twitter',
+    username: 'adamfschwartz'
+  }, {
+    account: 'facebook',
+    username: 'adam.flynn.schwartz'
+  }],
+  color: '#70c2b5'
+});
 ```
+
+__[Demo](https://rawgit.com/EagerIO/SocialSharingIcons/master/example.html)__
