@@ -21,6 +21,7 @@
       "color": {
         "title": "Color",
         "type": "string",
+        "format": "color",
         "default": "auto"
       },
       "icons": {
