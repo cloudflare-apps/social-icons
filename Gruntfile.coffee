@@ -13,12 +13,6 @@ module.exports = (grunt) ->
         dest: './'
         ext: '.js'
 
-    watch:
-      options:
-        atBegin: true
-      coffee:
-        files: ['*.coffe']
-
     uglify:
       options:
         banner: "/*! <%= pkg.name %> <%= pkg.version %> */\n"
@@ -27,13 +21,6 @@ module.exports = (grunt) ->
         src: 'social-sharing-icons.js'
         dest: 'social-sharing-icons.min.js'
 
-    compass:
-      dist:
-        options:
-          sassDir: 'sass'
-          cssDir: 'themes'
-
-  grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
 

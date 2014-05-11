@@ -55,34 +55,6 @@
                 "type": "string"
               }
             }
-          },
-          "pinterest": {
-            "title": "Pinterest",
-            "type": "object",
-            "properties": {
-              "enabled": {
-                "title": "Show",
-                "type": "boolean"
-              },
-              "username": {
-                "title": "Username",
-                "type": "string"
-              }
-            }
-          },
-          "youtube": {
-            "title": "Youtube",
-            "type": "object",
-            "properties": {
-              "enabled": {
-                "title": "Show",
-                "type": "boolean"
-              },
-              "username": {
-                "title": "Username",
-                "type": "string"
-              }
-            }
           }
         }
       }
