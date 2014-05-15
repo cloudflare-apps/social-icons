@@ -9,7 +9,7 @@
       },
       {
         "type": "script",
-        "contents": "SocialSharingIcons.render(ELEMENT, OPTIONS)"
+        "contents": "SocialSharingIcons.init(ELEMENT, OPTIONS)"
       }
     ]
   },

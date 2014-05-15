@@ -13,13 +13,14 @@ Visit [Eager app store](http://eager.io)
 
 ```javascript
 SocialSharingIcons.init(document.querySelector('.social-sharing-icons'), {
-  icons: [{
-    account: 'twitter',
-    username: 'adamfschwartz'
-  }, {
-    account: 'facebook',
-    username: 'adam.flynn.schwartz'
-  }],
+  icons: {
+    twitter: {
+      username: 'adamfschwartz'
+    },
+    facebook: {
+      username: 'adam.flynn.schwartz'
+    }
+  },
   color: '#70c2b5'
 });
 ```

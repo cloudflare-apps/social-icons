@@ -35,10 +35,10 @@ window.SocialSharingIcons =
 
     htmlString = ''
 
-    for icon in options.icons
+    for type, icon of options.icons when icon.enabled isnt false
       htmlString += """
-        <a href="http://#{ icon.account }.com/#{ icon.username }" target="_blank" style="display: inline-block; width: #{ options.size }; height: #{ options.size }">
-          #{ SVG[icon.account](options.color) }
+        <a href="http://#{ type }.com/#{ icon.username }" target="_blank" style="display: inline-block; width: #{ options.size }; height: #{ options.size }">
+          #{ SVG[type](options.color) }
         </a>
       """
 

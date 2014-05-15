@@ -36,16 +36,18 @@
 
   window.SocialSharingIcons = {
     init: function(element, options) {
-      var htmlString, icon, _i, _len, _ref;
+      var htmlString, icon, type, _ref;
       if (!element) {
         return;
       }
       options = extend({}, defaults, options);
       htmlString = '';
       _ref = options.icons;
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        icon = _ref[_i];
-        htmlString += "<a href=\"http://" + icon.account + ".com/" + icon.username + "\" target=\"_blank\" style=\"display: inline-block; width: " + options.size + "; height: " + options.size + "\">\n  " + (SVG[icon.account](options.color)) + "\n</a>";
+      for (type in _ref) {
+        icon = _ref[type];
+        if (icon.enabled !== false) {
+          htmlString += "<a href=\"http://" + type + ".com/" + icon.username + "\" target=\"_blank\" style=\"display: inline-block; width: " + options.size + "; height: " + options.size + "\">\n  " + (SVG[type](options.color)) + "\n</a>";
+        }
       }
       return element.innerHTML = htmlString;
     }
