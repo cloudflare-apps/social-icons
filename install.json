@@ -1,14 +1,14 @@
 {
   "title": "Social Sharing Icons",
   "description": "Social sharing icon links for a website.",
-  "include": {
-    "afterBody": [
+  "resources": {
+    "body": [
       {
-        "tag": "script",
+        "type": "script",
         "src": "./social-sharing-icons.js"
       },
       {
-        "tag": "script",
+        "type": "script",
         "contents": "SocialSharingIcons.render(ELEMENT, OPTIONS)"
       }
     ]
