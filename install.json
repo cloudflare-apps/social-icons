@@ -24,6 +24,11 @@
         "format": "color",
         "default": "auto"
       },
+      "color": {
+        "title": "Size",
+        "type": "string",
+        "default": "3em"
+      },
       "icons": {
         "title": "Icons",
         "type": "object",
