@@ -20,7 +20,7 @@
   };
 
   defaults = {
-    icons: ['facebook', 'twitter'],
+    icons: {},
     color: 'auto',
     size: '3em'
   };
