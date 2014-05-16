@@ -24,7 +24,7 @@
         "format": "color",
         "default": "auto"
       },
-      "color": {
+      "size": {
         "title": "Size",
         "type": "string",
         "default": "3em"
