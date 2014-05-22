@@ -7,7 +7,7 @@
       },
       {
         "type": "script",
-        "contents": "SocialSharingIcons.init(OPTIONS.container.create(), OPTIONS)"
+        "contents": "SocialSharingIcons.init(Eager.createElement(OPTIONS.container), OPTIONS)"
       }
     ]
   },
