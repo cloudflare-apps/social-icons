@@ -7,15 +7,17 @@
       },
       {
         "type": "script",
-        "contents": "SocialSharingIcons.init(ELEMENT, OPTIONS)"
+        "contents": "SocialSharingIcons.init(OPTIONS.container.create(), OPTIONS)"
       }
     ]
   },
-  "element": {
-    "allowSelector": "*"
-  },
   "options": {
     "properties": {
+      "container": {
+        "title": "Location",
+        "type": "object",
+        "format": "element"
+      },
       "color": {
         "title": "Color",
         "type": "string",
