@@ -56,7 +56,7 @@
                 "type": "boolean"
               },
               "username": {
-                "title": "Handle",
+                "title": "Username",
                 "type": "string"
               }
             }
