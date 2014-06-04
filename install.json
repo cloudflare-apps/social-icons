@@ -60,6 +60,20 @@
                 "type": "string"
               }
             }
+          },
+          "github": {
+            "title": "Github",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean"
+              },
+              "username": {
+                "title": "Username",
+                "type": "string"
+              }
+            }
           }
         }
       }

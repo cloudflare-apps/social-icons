@@ -21,6 +21,10 @@ SocialIcons.init(document.querySelector('.social-icons'), {
     twitter: {
       enabled: true,
       username: "adamfschwartz"
+    },
+    github: {
+      enabled: true,
+      username: "adamschwartz"
     }
   },
   color: '#70c2b5'
