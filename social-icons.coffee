@@ -27,7 +27,7 @@ SVG =
     </svg>
   """
 
-window.SocialSharingIcons =
+window.SocialIcons =
   init: (element, options) ->
     return unless element
 

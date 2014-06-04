@@ -1,4 +1,4 @@
-## Social Sharing Icons
+## Social Icons
 > SVG social icons for your website
 
 ### Eager app store
@@ -6,13 +6,13 @@ Visit [Eager app store](http://eager.io)
 
 ### Manual include
 ```HTML
-<script src="social-sharing-icons.min.js"></script>
+<script src="social-icons.min.js"></script>
 ```
 
 ### Example usage
 
 ```javascript
-SocialSharingIcons.init(document.querySelector('.social-sharing-icons'), {
+SocialIcons.init(document.querySelector('.social-icons'), {
   icons: {
     facebook: {
       enabled: true,
@@ -27,4 +27,4 @@ SocialSharingIcons.init(document.querySelector('.social-sharing-icons'), {
 });
 ```
 
-__[Demo](https://rawgit.com/EagerIO/SocialSharingIcons/master/example.html)__
+__[Demo](https://rawgit.com/EagerIO/SocialIcons/master/example.html)__

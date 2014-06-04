@@ -34,7 +34,7 @@
     }
   };
 
-  window.SocialSharingIcons = {
+  window.SocialIcons = {
     init: function(element, options) {
       var htmlString, icon, type, _ref;
       if (!element) {

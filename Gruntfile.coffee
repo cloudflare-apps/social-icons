@@ -9,7 +9,7 @@ module.exports = (grunt) ->
       compile:
         expand: true
         flatten: true
-        src: 'social-sharing-icons.coffee'
+        src: 'social-icons.coffee'
         dest: './'
         ext: '.js'
 
@@ -18,8 +18,8 @@ module.exports = (grunt) ->
         banner: "/*! <%= pkg.name %> <%= pkg.version %> */\n"
 
       dist:
-        src: 'social-sharing-icons.js'
-        dest: 'social-sharing-icons.min.js'
+        src: 'social-icons.js'
+        dest: 'social-icons.min.js'
 
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-coffee'

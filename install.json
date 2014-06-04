@@ -3,11 +3,11 @@
     "body": [
       {
         "type": "script",
-        "src": "./social-sharing-icons.js"
+        "src": "./social-icons.js"
       },
       {
         "type": "script",
-        "contents": "SocialSharingIcons.init(Eager.createElement(EAGER_OPTIONS.container), EAGER_OPTIONS)"
+        "contents": "SocialIcons.init(Eager.createElement(EAGER_OPTIONS.container), EAGER_OPTIONS)"
       }
     ]
   },
