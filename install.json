@@ -27,6 +27,20 @@
       "size": {
         "title": "Size",
         "type": "string",
+        "enum": [
+          "1em",
+          "2em",
+          "3em",
+          "4em",
+          "5em"
+        ],
+        "enumNames": {
+          "1em": "Tiny",
+          "2em": "Small",
+          "3em": "Normal",
+          "4em": "Large",
+          "5em": "Huge"
+        },
         "default": "3em"
       },
       "icons": {
