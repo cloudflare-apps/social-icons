@@ -49,7 +49,7 @@
       for (type in _ref) {
         icon = _ref[type];
         if (icon.enabled !== false) {
-          htmlString += "<a href=\"http://" + type + ".com/" + icon.username + "\" target=\"_blank\" style=\"display: inline\">" + (SVG[type](options.color, options.size)) + "</a>";
+          htmlString += "<a href=\"http://" + type + ".com/" + (icon.username || '') + "\" target=\"_blank\" style=\"display: inline\">" + (SVG[type](options.color, options.size)) + "</a>";
         }
       }
       return element.innerHTML = htmlString;

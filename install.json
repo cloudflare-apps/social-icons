@@ -53,7 +53,8 @@
             "properties": {
               "enabled": {
                 "title": "Show",
-                "type": "boolean"
+                "type": "boolean",
+                "default": true
               },
               "username": {
                 "title": "Username",
@@ -67,7 +68,8 @@
             "properties": {
               "enabled": {
                 "title": "Show",
-                "type": "boolean"
+                "type": "boolean",
+                "default": true
               },
               "username": {
                 "title": "Username",
@@ -81,7 +83,8 @@
             "properties": {
               "enabled": {
                 "title": "Show",
-                "type": "boolean"
+                "type": "boolean",
+                "default": false
               },
               "username": {
                 "title": "Username",
