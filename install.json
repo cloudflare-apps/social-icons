@@ -7,7 +7,7 @@
       },
       {
         "type": "script",
-        "contents": "SocialIcons.init(Eager.createElement(EAGER_OPTIONS.container), EAGER_OPTIONS)"
+        "contents": "SocialIcons.init(Eager.createElement(INSTALL_OPTIONS.container), INSTALL_OPTIONS)"
       }
     ]
   },
