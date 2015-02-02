@@ -68,6 +68,7 @@
                   "icons.facebook.enabled": true
                 },
                 "title": "Username",
+                "description": "As in facebook.com/<strong>username</strong>",
                 "type": "string"
               }
             }
@@ -87,6 +88,7 @@
                   "icons.twitter.enabled": true
                 },
                 "title": "Username",
+                "description": "As in twitter.com/<strong>username</strong>",
                 "type": "string"
               }
             }
@@ -106,6 +108,27 @@
                   "icons.github.enabled": true
                 },
                 "title": "Username",
+                "description": "As in github.com/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "linkedin": {
+            "order": 3,
+            "title": "LinkedIn",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.linkedin.enabled": true
+                },
+                "title": "Username",
+                "description": "As in linkedin.com/in/<strong>username</strong>",
                 "type": "string"
               }
             }
