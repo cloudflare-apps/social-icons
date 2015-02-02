@@ -114,7 +114,7 @@
             }
           },
           "linkedin": {
-            "order": 3,
+            "order": 4,
             "title": "LinkedIn",
             "type": "object",
             "properties": {
