@@ -1,3 +1,5 @@
+return unless document.addEventListener
+
 extend = (out) ->
   out = out or {}
   i = 1
@@ -37,19 +39,39 @@ SVG =
     </svg>
   """
 
-window.SocialIcons =
-  init: (element, options) ->
-    return unless element
+prevEl = el = null
+setOptions = (opts) ->
+  return unless document.body
 
-    options = extend {}, defaults, options
+  options = extend {}, defaults, opts
 
-    htmlString = ''
+  if el
+    if prevEl
+      el.parentNode.replaceChild prevEl, el
+      prevEl = null
+    else
+      el.parentNode.removeChild el
 
-    for type, icon of options.icons when icon.enabled isnt false
-      htmlString += """
-        <a href="http://#{ type }.com/#{ icon.username }" target="_blank" style="display: inline">#{
-          SVG[type](options.color, options.size)
-        }</a>
-      """
+  if options.container.method is 'replace'
+    prevEl = document.querySelector options.container.selector
 
-    element.innerHTML = htmlString
+  el = Eager.createElement(options.container)
+
+  htmlString = ''
+
+  for type, icon of options.icons when icon.enabled isnt false
+    htmlString += """
+      <a href="http://#{ type }.com/#{ icon.username }" target="_blank" style="display: inline">#{
+        SVG[type](options.color, options.size)
+      }</a>
+    """
+
+  el.innerHTML = htmlString
+
+if document.readyState is 'complete'
+  setOptions INSTALL_OPTIONS
+else
+  document.addEventListener 'DOMContentLoaded', ->
+    setOptions INSTALL_OPTIONS
+
+window.SocialIcons = {setOptions}

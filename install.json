@@ -1,13 +1,17 @@
 {
   "resources": {
-    "body": [
+    "head": [
       {
         "type": "script",
         "src": "./social-icons.js"
-      },
+      }
+    ]
+  },
+  "preview": {
+    "handlers": [
       {
-        "type": "script",
-        "contents": "SocialIcons.init(Eager.createElement(EAGER_OPTIONS.container), EAGER_OPTIONS)"
+        "options": ["*"],
+        "execute": "SocialIcons.setOptions(INSTALL_OPTIONS)"
       }
     ]
   },

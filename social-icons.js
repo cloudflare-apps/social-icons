@@ -1,5 +1,9 @@
 (function() {
-  var SVG, defaults, extend;
+  var SVG, defaults, el, extend, prevEl, setOptions;
+
+  if (!document.addEventListener) {
+    return;
+  }
 
   extend = function(out) {
     var i, key;
@@ -37,23 +41,47 @@
     }
   };
 
-  window.SocialIcons = {
-    init: function(element, options) {
-      var htmlString, icon, type, _ref;
-      if (!element) {
-        return;
-      }
-      options = extend({}, defaults, options);
-      htmlString = '';
-      _ref = options.icons;
-      for (type in _ref) {
-        icon = _ref[type];
-        if (icon.enabled !== false) {
-          htmlString += "<a href=\"http://" + type + ".com/" + icon.username + "\" target=\"_blank\" style=\"display: inline\">" + (SVG[type](options.color, options.size)) + "</a>";
-        }
-      }
-      return element.innerHTML = htmlString;
+  prevEl = el = null;
+
+  setOptions = function(opts) {
+    var htmlString, icon, options, type, _ref;
+    if (!document.body) {
+      return;
     }
+    options = extend({}, defaults, opts);
+    if (el) {
+      if (prevEl) {
+        el.parentNode.replaceChild(prevEl, el);
+        prevEl = null;
+      } else {
+        el.parentNode.removeChild(el);
+      }
+    }
+    if (options.container.method === 'replace') {
+      prevEl = document.querySelector(options.container.selector);
+    }
+    el = Eager.createElement(options.container);
+    htmlString = '';
+    _ref = options.icons;
+    for (type in _ref) {
+      icon = _ref[type];
+      if (icon.enabled !== false) {
+        htmlString += "<a href=\"http://" + type + ".com/" + icon.username + "\" target=\"_blank\" style=\"display: inline\">" + (SVG[type](options.color, options.size)) + "</a>";
+      }
+    }
+    return el.innerHTML = htmlString;
+  };
+
+  if (document.readyState === 'complete') {
+    setOptions(INSTALL_OPTIONS);
+  } else {
+    document.addEventListener('DOMContentLoaded', function() {
+      return setOptions(INSTALL_OPTIONS);
+    });
+  }
+
+  window.SocialIcons = {
+    setOptions: setOptions
   };
 
 }).call(this);
