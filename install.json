@@ -17,18 +17,15 @@
   },
   "options": {
     "properties": {
-      "container": {
-        "title": "Location",
-        "type": "object",
-        "format": "element"
-      },
       "color": {
+        "order": 1,
         "title": "Color",
         "type": "string",
         "format": "color",
         "default": "auto"
       },
       "size": {
+        "order": 2,
         "title": "Size",
         "type": "string",
         "enum": [
@@ -47,48 +44,95 @@
         },
         "default": "3em"
       },
+      "container": {
+        "order": 3,
+        "title": "Location",
+        "description": "Select where you want the icons to be added to your site.",
+        "type": "object",
+        "format": "element"
+      },
       "icons": {
+        "order": 4,
         "title": "Icons",
+        "description": "Check the icons you’d like to add.",
         "type": "object",
         "properties": {
           "facebook": {
+            "order": 1,
             "title": "Facebook",
             "type": "object",
             "properties": {
               "enabled": {
                 "title": "Show",
-                "type": "boolean"
+                "type": "boolean",
+                "default": true
               },
               "username": {
+                "showIf": {
+                  "icons.facebook.enabled": true
+                },
                 "title": "Username",
+                "description": "As in facebook.com/<strong>username</strong>",
                 "type": "string"
               }
             }
           },
           "twitter": {
+            "order": 2,
             "title": "Twitter",
             "type": "object",
             "properties": {
               "enabled": {
                 "title": "Show",
-                "type": "boolean"
+                "type": "boolean",
+                "default": false
               },
               "username": {
+                "showIf": {
+                  "icons.twitter.enabled": true
+                },
                 "title": "Username",
+                "description": "As in twitter.com/<strong>username</strong>",
                 "type": "string"
               }
             }
           },
           "github": {
+            "order": 3,
             "title": "Github",
             "type": "object",
             "properties": {
               "enabled": {
                 "title": "Show",
-                "type": "boolean"
+                "type": "boolean",
+                "default": false
               },
               "username": {
+                "showIf": {
+                  "icons.github.enabled": true
+                },
                 "title": "Username",
+                "description": "As in github.com/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "linkedin": {
+            "order": 4,
+            "title": "LinkedIn",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.linkedin.enabled": true
+                },
+                "title": "Username",
+                "description": "As in linkedin.com/in/<strong>username</strong>",
                 "type": "string"
               }
             }
