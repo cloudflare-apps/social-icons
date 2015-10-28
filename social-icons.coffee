@@ -51,7 +51,7 @@ setOptions = (opts) ->
 
   options = extend {}, defaults, opts
 
-  if el
+  if el and el.parentNode
     if prevEl
       el.parentNode.replaceChild prevEl, el
       prevEl = null

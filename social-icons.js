@@ -52,7 +52,7 @@
       return;
     }
     options = extend({}, defaults, opts);
-    if (el) {
+    if (el && el.parentNode) {
       if (prevEl) {
         el.parentNode.replaceChild(prevEl, el);
         prevEl = null;
