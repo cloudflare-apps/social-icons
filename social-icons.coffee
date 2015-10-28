@@ -45,26 +45,33 @@ SVG =
     </svg>
   """
 
-prevEl = el = null
-setOptions = (opts) ->
+defContext = {
+  el: null
+  prevEl: null
+}
+
+setOptions = (opts, context=defContext) ->
   return unless document.body
 
   options = extend {}, defaults, opts
 
-  if el and el.parentNode
-    if prevEl
-      el.parentNode.replaceChild prevEl, el
-      prevEl = null
-    else
-      el.parentNode.removeChild el
+  el = context.el
+  prevEl = context.prevEl
 
   if options.element
-    el = options.element
+    el = context.el = options.element
   else
-    if options.container.method is 'replace'
-      prevEl = document.querySelector options.container.selector
+    if el and el.parentNode
+      if prevEl
+        el.parentNode.replaceChild prevEl, el
+        context.prevEl = prevEl = null
+      else
+        el.parentNode.removeChild el
+    else
+      if options.container.method is 'replace'
+        prevEl = context.prevEl = document.querySelector options.container.selector
 
-    el = Eager.createElement(options.container)
+      el = context.el = Eager.createElement(options.container)
 
   htmlString = ''
 
@@ -83,10 +90,20 @@ setOptions = (opts) ->
   el.innerHTML = htmlString
 
 init = (options) ->
-  if document.readyState is 'complete'
-    setOptions options
+  context = {
+    el: null
+    prevEl: null
+  }
+
+  if document.readyState isnt 'loading'
+    setOptions options, context
   else
     document.addEventListener 'DOMContentLoaded', ->
-      setOptions options
+      setOptions options, context
+
+  return {
+    setOptions: (opts) ->
+      setOptions opts, context
+  }
 
 window.SocialIcons = {setOptions, init}
