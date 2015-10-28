@@ -2,7 +2,8 @@
   <div class="social-icons"></div>
   <script src="social-icons.min.js"></script>
   <script>
-    SocialIcons.init(document.querySelector('.social-icons'), {
+    SocialIcons.init({
+      element: document.querySelector('.social-icons'),
       icons: {
         facebook: {
           enabled: true,
@@ -24,7 +25,8 @@
       color: '#70c2b5'
     });
   </script>
-  <pre><code>SocialIcons.init(document.querySelector('.social-icons'), {
+  <pre><code>SocialIcons.init({
+  element: document.querySelector('.social-icons'),
   icons: {
     facebook: {
       enabled: true,

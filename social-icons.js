@@ -60,10 +60,14 @@
         el.parentNode.removeChild(el);
       }
     }
-    if (options.container.method === 'replace') {
-      prevEl = document.querySelector(options.container.selector);
+    if (options.element) {
+      el = options.element;
+    } else {
+      if (options.container.method === 'replace') {
+        prevEl = document.querySelector(options.container.selector);
+      }
+      el = Eager.createElement(options.container);
     }
-    el = Eager.createElement(options.container);
     htmlString = '';
     _ref = options.icons;
     for (type in _ref) {

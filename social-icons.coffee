@@ -58,10 +58,13 @@ setOptions = (opts) ->
     else
       el.parentNode.removeChild el
 
-  if options.container.method is 'replace'
-    prevEl = document.querySelector options.container.selector
+  if options.element
+    el = options.element
+  else
+    if options.container.method is 'replace'
+      prevEl = document.querySelector options.container.selector
 
-  el = Eager.createElement(options.container)
+    el = Eager.createElement(options.container)
 
   htmlString = ''
 
