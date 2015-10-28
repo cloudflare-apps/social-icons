@@ -1,5 +1,5 @@
 (function() {
-  var SVG, defaults, el, extend, prevEl, setOptions;
+  var SVG, defaults, el, extend, init, prevEl, setOptions;
 
   if (!document.addEventListener) {
     return;
@@ -81,16 +81,19 @@
     return el.innerHTML = htmlString;
   };
 
-  if (document.readyState === 'complete') {
-    setOptions(INSTALL_OPTIONS);
-  } else {
-    document.addEventListener('DOMContentLoaded', function() {
-      return setOptions(INSTALL_OPTIONS);
-    });
-  }
+  init = function(options) {
+    if (document.readyState === 'complete') {
+      return setOptions(options);
+    } else {
+      return document.addEventListener('DOMContentLoaded', function() {
+        return setOptions(options);
+      });
+    }
+  };
 
   window.SocialIcons = {
-    setOptions: setOptions
+    setOptions: setOptions,
+    init: init
   };
 
 }).call(this);

@@ -79,10 +79,11 @@ setOptions = (opts) ->
 
   el.innerHTML = htmlString
 
-if document.readyState is 'complete'
-  setOptions INSTALL_OPTIONS
-else
-  document.addEventListener 'DOMContentLoaded', ->
-    setOptions INSTALL_OPTIONS
+init = (options) ->
+  if document.readyState is 'complete'
+    setOptions options
+  else
+    document.addEventListener 'DOMContentLoaded', ->
+      setOptions options
 
-window.SocialIcons = {setOptions}
+window.SocialIcons = {setOptions, init}

@@ -4,6 +4,10 @@
       {
         "type": "script",
         "src": "./social-icons.js"
+      },
+      {
+        "type": "script",
+        "contents": "SocialIcons.init(INSTALL_OPTIONS)"
       }
     ]
   },
