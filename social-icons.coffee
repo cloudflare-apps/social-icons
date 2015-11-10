@@ -45,10 +45,7 @@ SVG =
     </svg>
   """
 
-defContext = {
-  el: null
-  prevEl: null
-}
+defContext = null
 
 setOptions = (opts, context=defContext) ->
   return unless document.body
@@ -56,22 +53,11 @@ setOptions = (opts, context=defContext) ->
   options = extend {}, defaults, opts
 
   el = context.el
-  prevEl = context.prevEl
 
   if options.element
     el = context.el = options.element
   else
-    if el and el.parentNode
-      if prevEl
-        el.parentNode.replaceChild prevEl, el
-        context.prevEl = prevEl = null
-      else
-        el.parentNode.removeChild el
-    else
-      if options.container.method is 'replace'
-        prevEl = context.prevEl = document.querySelector options.container.selector
-
-      el = context.el = Eager.createElement(options.container)
+    el = context.el = Eager.createElement(options.container, el)
 
   htmlString = ''
 
@@ -92,8 +78,10 @@ setOptions = (opts, context=defContext) ->
 init = (options) ->
   context = {
     el: null
-    prevEl: null
   }
+
+  if not defContext
+    defContext = context
 
   if document.readyState isnt 'loading'
     setOptions options, context

@@ -1,5 +1,5 @@
 (function() {
-  var SVG, defaults, el, extend, init, prevEl, setOptions;
+  var SVG, defContext, defaults, extend, init, setOptions;
 
   if (!document.addEventListener) {
     return;
@@ -44,29 +44,22 @@
     }
   };
 
-  prevEl = el = null;
+  defContext = null;
 
-  setOptions = function(opts) {
-    var htmlString, icon, options, type, username, _ref;
+  setOptions = function(opts, context) {
+    var el, htmlString, icon, options, type, username, _ref;
+    if (context == null) {
+      context = defContext;
+    }
     if (!document.body) {
       return;
     }
     options = extend({}, defaults, opts);
-    if (el && el.parentNode) {
-      if (prevEl) {
-        el.parentNode.replaceChild(prevEl, el);
-        prevEl = null;
-      } else {
-        el.parentNode.removeChild(el);
-      }
-    }
+    el = context.el;
     if (options.element) {
-      el = options.element;
+      el = context.el = options.element;
     } else {
-      if (options.container.method === 'replace') {
-        prevEl = document.querySelector(options.container.selector);
-      }
-      el = Eager.createElement(options.container);
+      el = context.el = Eager.createElement(options.container, el);
     }
     htmlString = '';
     _ref = options.icons;
@@ -86,13 +79,25 @@
   };
 
   init = function(options) {
-    if (document.readyState === 'complete') {
-      return setOptions(options);
+    var context;
+    context = {
+      el: null
+    };
+    if (!defContext) {
+      defContext = context;
+    }
+    if (document.readyState !== 'loading') {
+      setOptions(options, context);
     } else {
-      return document.addEventListener('DOMContentLoaded', function() {
-        return setOptions(options);
+      document.addEventListener('DOMContentLoaded', function() {
+        return setOptions(options, context);
       });
     }
+    return {
+      setOptions: function(opts) {
+        return setOptions(opts, context);
+      }
+    };
   };
 
   window.SocialIcons = {
