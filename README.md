@@ -1,9 +1,8 @@
 ## Social Icons
 > SVG social icons for your website
 
-### Eager app store
-[Install Social Icons](https://eager.io/app/social-icons/install) on the [Eager App Store](http://eager.io).
-
+### Cloudflare Apps
+[Install Social Icons](https://cloudflareapps.com/apps/social-icons/install) on [Cloudflare Apps](https://cloudflareapps.com).
 
 ### Manual include
 ```HTML

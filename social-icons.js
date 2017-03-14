@@ -59,7 +59,7 @@
     if (options.element) {
       el = context.el = options.element;
     } else {
-      el = context.el = Eager.createElement(options.container, el);
+      el = context.el = INSTALL.createElement(options.container, el);
     }
     htmlString = '';
     _ref = options.icons;
