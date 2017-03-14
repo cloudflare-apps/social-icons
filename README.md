@@ -2,7 +2,7 @@
 > SVG social icons for your website
 
 ### Cloudflare Apps
-[Install Social Icons](https://cloudflareapps.com/apps/social-icons/install)
+[Install Social Icons](https://cloudflareapps.com/apps/social-icons/install) on [Cloudflare Apps](https://cloudflareapps.com).
 
 ### Manual include
 ```HTML
