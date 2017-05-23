@@ -1,0 +1,35 @@
+cloudflare-app[app="social-icons"] {
+  display: block;
+  display: flex;
+  margin: 1em 2em;
+}
+
+cloudflare-app[app="social-icons"][data-position="left"] {
+  justify-content: flex-start;
+}
+
+cloudflare-app[app="social-icons"][data-position="center"] {
+  justify-content: center;
+}
+
+cloudflare-app[app="social-icons"][data-position="right"] {
+  justify-content: flex-end;
+}
+
+cloudflare-app[app="social-icons"] > a {
+  display: block;
+  text-decoration: none;
+  flex: 0 0 auto;
+  height: 100%;
+  transition: width, height 100ms linear;
+}
+
+cloudflare-app[app="social-icons"] > a + a {
+  margin-left: .2em;
+}
+
+cloudflare-app[app="social-icons"] > a > svg {
+  display: block;
+  height: 100%;
+  width: auto;
+}

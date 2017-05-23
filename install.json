@@ -3,19 +3,23 @@
     "head": [
       {
         "type": "script",
-        "src": "./social-icons.js"
+        "src": "./build/app.js"
       },
       {
-        "type": "script",
-        "contents": "SocialIcons.init(INSTALL_OPTIONS)"
+        "type": "style",
+        "src": "./build/app.css"
       }
     ]
   },
   "preview": {
     "handlers": [
       {
-        "options": ["*"],
-        "execute": "SocialIcons.setOptions(INSTALL_OPTIONS)"
+        "options": ["color", "container", "position", "services"],
+        "execute": "INSTALL_SCOPE.setOptions(INSTALL_OPTIONS)"
+      },
+      {
+        "options": ["size"],
+        "execute": "INSTALL_SCOPE.setSize(INSTALL_OPTIONS)"
       }
     ]
   },
@@ -31,22 +35,12 @@
       "size": {
         "order": 2,
         "title": "Size",
-        "type": "string",
-        "enum": [
-          "1em",
-          "2em",
-          "3em",
-          "4em",
-          "5em"
-        ],
-        "enumNames": {
-          "1em": "Tiny",
-          "2em": "Small",
-          "3em": "Normal",
-          "4em": "Large",
-          "5em": "Huge"
-        },
-        "default": "3em"
+        "type": "number",
+        "format": "slider",
+        "minimum": 1,
+        "maximum": 5,
+        "step": 0.5,
+        "default": "3"
       },
       "container": {
         "order": 3,
@@ -55,8 +49,26 @@
         "type": "object",
         "format": "element"
       },
-      "icons": {
+
+      "position": {
         "order": 4,
+        "title": "Horizontal alignment",
+        "type": "string",
+        "default": "center",
+        "enum": [
+          "left",
+          "center",
+          "right"
+        ],
+        "enumNames": {
+          "left": "Left",
+          "center": "Center",
+          "right": "Right"
+        }
+      },
+
+      "services": {
+        "order": 5,
         "title": "Icons",
         "description": "Check the icons you’d like to add.",
         "type": "object",
@@ -73,7 +85,7 @@
               },
               "username": {
                 "showIf": {
-                  "icons.facebook.enabled": true
+                  "services.facebook.enabled": true
                 },
                 "title": "Username",
                 "description": "As in facebook.com/<strong>username</strong>",
@@ -93,7 +105,7 @@
               },
               "username": {
                 "showIf": {
-                  "icons.twitter.enabled": true
+                  "services.twitter.enabled": true
                 },
                 "title": "Username",
                 "description": "As in twitter.com/<strong>username</strong>",
@@ -113,7 +125,7 @@
               },
               "username": {
                 "showIf": {
-                  "icons.github.enabled": true
+                  "services.github.enabled": true
                 },
                 "title": "Username",
                 "description": "As in github.com/<strong>username</strong>",
@@ -133,7 +145,7 @@
               },
               "username": {
                 "showIf": {
-                  "icons.linkedin.enabled": true
+                  "services.linkedin.enabled": true
                 },
                 "title": "Username",
                 "description": "As in linkedin.com/in/<strong>username</strong>",
