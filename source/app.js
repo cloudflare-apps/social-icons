@@ -1,5 +1,3 @@
-import * as socialMedia from './social-media'
-
 (function () {
   if (!document.addEventListener) return
 
@@ -15,14 +13,15 @@ import * as socialMedia from './social-media'
     const size = `${options.size}em`
 
     Object
-      .keys(options.services)
-      .filter(id => options.services[id].enabled)
+      .keys(options.icons)
+      .filter(id => options.icons[id].enabled)
       .forEach(id => {
-        const service = options.services[id]
+        const config = options.icons[id]
+        const service = INSTALL_SCOPE.services[id]
 
         htmlString += `
-          <a href="${socialMedia[id].url(service.username)}" style="height: ${size}; width: ${size};" target="_blank">
-            ${socialMedia[id].icon(options.color || 'auto')}
+          <a href="${service.url(config.username || '')}" style="height: ${size}; width: ${size};" target="_blank">
+            ${service.icon(options.color || '#000')}
           </a>
         `
       })
@@ -30,13 +29,8 @@ import * as socialMedia from './social-media'
     element.innerHTML = htmlString
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', updateElement)
-  } else {
-    updateElement()
-  }
-
   window.INSTALL_SCOPE = {
+    ...INSTALL_SCOPE,
     setOptions (nextOptions) {
       options = nextOptions
 
@@ -51,5 +45,11 @@ import * as socialMedia from './social-media'
         link.style.width = `${options.size}em`
       })
     }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateElement)
+  } else {
+    updateElement()
   }
 }())

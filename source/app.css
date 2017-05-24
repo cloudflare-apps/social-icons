@@ -1,7 +1,15 @@
 cloudflare-app[app="social-icons"] {
   display: block;
   display: flex;
+  flex-flow: row wrap;
   margin: 1em 2em;
+  max-width: 100vw;
+}
+
+@media (max-width: 768px) {
+  cloudflare-app[app="social-icons"] {
+    margin: .5em 0;
+  }
 }
 
 cloudflare-app[app="social-icons"][data-position="left"] {
@@ -21,7 +29,6 @@ cloudflare-app[app="social-icons"] > a {
   text-decoration: none;
   flex: 0 0 auto;
   height: 100%;
-  transition: width, height 100ms linear;
 }
 
 cloudflare-app[app="social-icons"] > a + a {

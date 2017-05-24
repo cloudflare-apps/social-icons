@@ -1,6 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const standardOptions = require('./package.json').standard
+const installJSON = require('./install.json')
+const iconConfigs = installJSON.options.properties.icons.properties
 
 const environment = process.env.NODE_ENV || 'development'
 const $ = {}
@@ -11,8 +13,13 @@ const modulePattern = /(node_modules|bower_components)/
 
 $.entry = {
   app: path.resolve(__dirname, './source', 'app.js'),
+  'icons/bootstrapper': path.resolve(__dirname, './source', 'icons', 'bootstrapper.js'),
   style: path.resolve(__dirname, './source', 'app.css')
 }
+
+Object.keys(iconConfigs).forEach(id => {
+  $.entry[`icons/${id}`] = path.resolve(__dirname, './source', 'icons', `${id}.js`)
+})
 
 $.output = {
   filename: '[name].js',

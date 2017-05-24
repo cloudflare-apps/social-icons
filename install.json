@@ -1,20 +1,144 @@
 {
   "resources": {
-    "head": [
+    "body": [
       {
         "type": "script",
-        "src": "./build/app.js"
+        "src": "./build/icons/bootstrapper.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.blogger.enabled",
+        "src": "./build/icons/blogger.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.delicious.enabled",
+        "src": "./build/icons/delicious.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.deviantart.enabled",
+        "src": "./build/icons/deviantart.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.dribbble.enabled",
+        "src": "./build/icons/dribbble.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.facebook.enabled",
+        "src": "./build/icons/facebook.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.flickr.enabled",
+        "src": "./build/icons/flickr.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.github.enabled",
+        "src": "./build/icons/github.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.googleplus.enabled",
+        "src": "./build/icons/googleplus.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.instagram.enabled",
+        "src": "./build/icons/instagram.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.lastfm.enabled",
+        "src": "./build/icons/lastfm.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.linkedin.enabled",
+        "src": "./build/icons/linkedin.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.mail.enabled",
+        "src": "./build/icons/mail.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.paypal.enabled",
+        "src": "./build/icons/paypal.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.pinterest.enabled",
+        "src": "./build/icons/pinterest.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.reddit.enabled",
+        "src": "./build/icons/reddit.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.rss.enabled",
+        "src": "./build/icons/rss.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.soundcloud.enabled",
+        "src": "./build/icons/soundcloud.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.stackoverflow.enabled",
+        "src": "./build/icons/stackoverflow.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.tumblr.enabled",
+        "src": "./build/icons/tumblr.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.twitter.enabled",
+        "src": "./build/icons/twitter.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.vimeo.enabled",
+        "src": "./build/icons/vimeo.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.wordpress.enabled",
+        "src": "./build/icons/wordpress.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.yelp.enabled",
+        "src": "./build/icons/yelp.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.youtube.enabled",
+        "src": "./build/icons/youtube.js"
       },
       {
         "type": "style",
         "src": "./build/app.css"
+      },
+      {
+        "type": "script",
+        "src": "./build/app.js"
       }
     ]
   },
   "preview": {
     "handlers": [
       {
-        "options": ["color", "container", "position", "services"],
+        "options": ["color", "container", "position"],
         "execute": "INSTALL_SCOPE.setOptions(INSTALL_OPTIONS)"
       },
       {
@@ -28,6 +152,7 @@
       "color": {
         "order": 1,
         "title": "Color",
+        "description": "Set to “auto” use brand colors.",
         "type": "string",
         "format": "color",
         "default": "auto"
@@ -47,9 +172,12 @@
         "title": "Location",
         "description": "Select where you want the icons to be added to your site.",
         "type": "object",
-        "format": "element"
+        "format": "element",
+        "default": {
+          "method": "prepend",
+          "selector": "body"
+        }
       },
-
       "position": {
         "order": 4,
         "title": "Horizontal alignment",
@@ -66,9 +194,8 @@
           "right": "Right"
         }
       },
-
-      "services": {
-        "order": 5,
+      "icons": {
+        "order": 4,
         "title": "Icons",
         "description": "Check the icons you’d like to add.",
         "type": "object",
@@ -85,7 +212,7 @@
               },
               "username": {
                 "showIf": {
-                  "services.facebook.enabled": true
+                  "icons.facebook.enabled": true
                 },
                 "title": "Username",
                 "description": "As in facebook.com/<strong>username</strong>",
@@ -101,11 +228,11 @@
               "enabled": {
                 "title": "Show",
                 "type": "boolean",
-                "default": false
+                "default": true
               },
               "username": {
                 "showIf": {
-                  "services.twitter.enabled": true
+                  "icons.twitter.enabled": true
                 },
                 "title": "Username",
                 "description": "As in twitter.com/<strong>username</strong>",
@@ -113,22 +240,22 @@
               }
             }
           },
-          "github": {
+          "googleplus": {
             "order": 3,
-            "title": "Github",
+            "title": "Google Plus",
             "type": "object",
             "properties": {
               "enabled": {
                 "title": "Show",
                 "type": "boolean",
-                "default": false
+                "default": true
               },
               "username": {
                 "showIf": {
-                  "services.github.enabled": true
+                  "icons.googleplus.enabled": true
                 },
                 "title": "Username",
-                "description": "As in github.com/<strong>username</strong>",
+                "description": "As in plus.google.com/+<strong>username</strong>",
                 "type": "string"
               }
             }
@@ -141,14 +268,414 @@
               "enabled": {
                 "title": "Show",
                 "type": "boolean",
+                "default": true
+              },
+              "username": {
+                "showIf": {
+                  "icons.linkedin.enabled": true
+                },
+                "title": "Username",
+                "description": "As in linkedin.com/in/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "blogger": {
+            "order": 7,
+            "title": "Blogger",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
                 "default": false
               },
               "username": {
                 "showIf": {
-                  "services.linkedin.enabled": true
+                  "icons.blogger.enabled": true
                 },
                 "title": "Username",
-                "description": "As in linkedin.com/in/<strong>username</strong>",
+                "description": "As in <strong>username</strong>.blogspot.com",
+                "type": "string"
+              }
+            }
+          },
+          "delicious": {
+            "order": 10,
+            "title": "Delicious",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.delicious.enabled": true
+                },
+                "title": "Username",
+                "description": "As in del.icio.us/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "deviantart": {
+            "order": 11,
+            "title": "Deviantart",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.deviantart.enabled": true
+                },
+                "title": "Username",
+                "description": "As in <strong>username</strong>.deviantart.com",
+                "type": "string"
+              }
+            }
+          },
+          "dribbble": {
+            "order": 12,
+            "title": "Dribbble",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.dribbble.enabled": true
+                },
+                "title": "Username",
+                "description": "As in dribbble.com/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "flickr": {
+            "order": 15,
+            "title": "Flickr",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.flickr.enabled": true
+                },
+                "title": "Username",
+                "description": "As in https://www.flickr.com/photos/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "github": {
+            "order": 17,
+            "title": "GitHub",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.github.enabled": true
+                },
+                "title": "Username",
+                "description": "As in github.com/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "instagram": {
+            "order": 20,
+            "title": "Instagram",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.instagram.enabled": true
+                },
+                "title": "Username",
+                "description": "As in instagram.com/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "lastfm": {
+            "order": 22,
+            "title": "LastFM",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.lastfm.enabled": true
+                },
+                "title": "Username",
+                "description": "As in https://www.last.fm/user/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "mail": {
+            "order": 23,
+            "title": "Mail",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.mail.enabled": true
+                },
+                "title": "Username",
+                "description": "As in <strong>you@email.com</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "paypal": {
+            "order": 26,
+            "title": "PayPal",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.paypal.enabled": true
+                },
+                "title": "Username",
+                "description": "As in paypal.me/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "pinterest": {
+            "order": 28,
+            "title": "Pinterest",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.pinterest.enabled": true
+                },
+                "title": "Username",
+                "description": "As in pinterest.com/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "reddit": {
+            "order": 29,
+            "title": "Reddit",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.reddit.enabled": true
+                },
+                "title": "Username",
+                "description": "As in https://www.reddit.com/user/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "rss": {
+            "order": 30,
+            "title": "RSS",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.rss.enabled": true
+                },
+                "title": "Username",
+                "description": "As in <strong>https://example.com/rss.xml</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "soundcloud": {
+            "order": 33,
+            "title": "SoundCloud",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.soundcloud.enabled": true
+                },
+                "title": "Username",
+                "description": "As in soundcloud.com/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "stackoverflow": {
+            "order": 34,
+            "title": "StackOverflow",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.stackoverflow.enabled": true
+                },
+                "title": "Username",
+                "description": "As in stackoverflow.com/users/<strong>123/username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "tumblr": {
+            "order": 36,
+            "title": "Tumblr",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.tumblr.enabled": true
+                },
+                "title": "Username",
+                "description": "As in <strong>username</strong>.tumblr.com",
+                "type": "string"
+              }
+            }
+          },
+          "vimeo": {
+            "order": 37,
+            "title": "Vimeo",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.vimeo.enabled": true
+                },
+                "title": "Username",
+                "description": "As in vimeo.com/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "wordpress": {
+            "order": 39,
+            "title": "WordPress",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.wordpress.enabled": true
+                },
+                "title": "Username",
+                "description": "As in <strong>username</strong>.wordpress.com",
+                "type": "string"
+              }
+            }
+          },
+          "yelp": {
+            "order": 41,
+            "title": "Yelp",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.yelp.enabled": true
+                },
+                "title": "Username",
+                "description": "As in yelp.com/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "youtube": {
+            "order": 42,
+            "title": "YouTube",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.youtube.enabled": true
+                },
+                "title": "Username",
+                "description": "As in youtube.com/user/<strong>username</strong>",
                 "type": "string"
               }
             }
