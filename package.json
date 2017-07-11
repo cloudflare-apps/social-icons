@@ -1,5 +1,5 @@
 {
-  "name": "cloudflare-app-example-webpack",
+  "name": "cloudflare-app-social-icons",
   "version": "0.0.0",
   "description": "",
   "private": true,
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CloudflareApps/ExampleWebpackApp.git"
+    "url": "git+https://github.com/CloudflareApps/SocialIcons.git"
   },
   "author": "Cloudflare Inc.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CloudflareApps/ExampleWebpackApp/issues"
+    "url": "https://github.com/CloudflareApps/SocialIcons/issues"
   },
-  "homepage": "https://github.com/CloudflareApps/ExampleWebpackApp#readme",
+  "homepage": "https://github.com/CloudflareApps/SocialIcons#readme",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.7.7",
