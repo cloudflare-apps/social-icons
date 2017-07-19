@@ -275,7 +275,7 @@
                   "icons.linkedin.enabled": true
                 },
                 "title": "Username",
-                "description": "As in linkedin.com/in/<strong>username</strong>",
+                "description": "As in: <br>- linkedin.com/<strong>in/username</strong> <br>- linkedin.com/<strong>organization/123456</strong>",
                 "type": "string"
               }
             }
@@ -455,8 +455,8 @@
                   "icons.mail.enabled": true
                 },
                 "title": "Username",
-                "description": "As in <strong>you@email.com</strong>",
-                "type": "string"
+                "type": "string",
+                "format": "email"
               }
             }
           },
