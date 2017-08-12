@@ -675,7 +675,8 @@
                   "icons.youtube.enabled": true
                 },
                 "title": "Username",
-                "description": "As in youtube.com/user/<strong>username</strong>",
+                "description": "As in: <br>- youtube.com/<strong>username</strong> <br>- youtube.com/<strong>user/username</strong> <br>- youtube.com/<strong>c/username</strong>",
+                "placeholder": "username",
                 "type": "string"
               }
             }
